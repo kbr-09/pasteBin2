@@ -357,8 +357,8 @@ HTML_TEMPLATE = '''
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 Modern Paste Service</h1>
-            <p>Fast, secure, and feature-rich pastebin alternative</p>
+            <h1>HOMElab TEXTshare</h1>
+            <p>Fast (not really), secure (daddy issues though), and feature-rich ($$)</p>
         </div>
         
         {% if message %}
@@ -371,20 +371,20 @@ HTML_TEMPLATE = '''
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-number">{{ total_pastes }}</div>
-                <div>Total Pastes</div>
+                <div>Total Pastes - I'm  counting</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">{{ total_size }}</div>
-                <div>Total Size (KB)</div>
+                <div>Total Size (KB) - Show off! It's just text</div>
             </div>
         </div>
         
         <!-- Paste Form -->
         <div class="paste-form">
-            <h2>📝 Create New Paste</h2>
+            <h2>New (Auto)</h2>
             <form method="post" action="{{ url_for('create_paste') }}">
                 <div class="form-group">
-                    <label for="title">Title (Optional)</label>
+                    <label for="title">Title (Optional) - not enough brain cells!</label>
                     <input type="text" id="title" name="title" placeholder="Enter a title for your paste">
                 </div>
                 
@@ -403,7 +403,7 @@ HTML_TEMPLATE = '''
                 </div>
                 
                 <div class="form-group">
-                    <label for="content">Content</label>
+                    <label for="content">Content - THE stuff</label>
                     <textarea 
                         id="content" 
                         name="content" 
@@ -419,7 +419,7 @@ HTML_TEMPLATE = '''
         
         <!-- Pastes List -->
         <div class="pastes-container">
-            <h2>📚 Recent Pastes</h2>
+            <h2>Recent Pastes</h2>
             {% if pastes %}
                 {% for paste in pastes %}
                 <div class="paste-item">
@@ -468,7 +468,7 @@ HTML_TEMPLATE = '''
                 {% endif %}
             {% else %}
                 <p style="text-align: center; color: white; margin-top: 40px;">
-                    No pastes yet. Create your first paste above! 🎉
+                    mty as ya head mate, no cells found
                 </p>
             {% endif %}
         </div>
