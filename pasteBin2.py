@@ -17,11 +17,12 @@ from flask import Flask, request, redirect, url_for, render_template_string, abo
 from jinja2 import Template
 import re
 
+
 app = Flask(__name__)
-app.secret_key = os.urandom(32)  # For session security
+app.secret_key = os.urandom(32)  # GOTH CHIC session security - serious daddy issues!
 
 # Configuration
-PASTE_STORAGE_DIR = "pastes"
+PASTE_STORAGE_DIR = os.path.join(os.path.dirname(__file__), "pastes")
 PASTE_FILE = os.path.join(PASTE_STORAGE_DIR, "pastes.json")
 MAX_PASTE_SIZE = 50000  # 50KB should be enough for me !!
 MAX_PASTES_PER_PAGE = 20 # 20 is probably too long, but then there are delete buttons
@@ -56,6 +57,7 @@ def generate_paste_id(content):
 
 def escape_html(text):
     """Escape HTML to prevent XSS"""
+    # SECURITY ;p
     return (text.replace('&', '&amp;')
                 .replace('<', '&lt;')
                 .replace('>', '&gt;')
@@ -64,7 +66,7 @@ def escape_html(text):
 
 def highlight_syntax(text):
     """Basic syntax highlighting for common languages"""
-    # Simple pattern matching for basic highlighting
+    # basic syntax highlighting - matching patterns
     patterns = {
         'python': [
             (r'#.*$', 'comment'),
@@ -111,6 +113,8 @@ def validate_paste(content):
     return True, ""
 
 # HTML Template with modern styling
+# And pray it works :(
+# Taking way more time than I thought
 HTML_TEMPLATE = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -125,7 +129,7 @@ HTML_TEMPLATE = '''
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(-45deg, hsla(60, 1%, 37%, 1) 0%, hsla(25, 33%, 17%, 1) 100%);
             min-height: 100vh;
         }
         
@@ -137,12 +141,12 @@ HTML_TEMPLATE = '''
         
         .header {
             text-align: center;
-            color: white;
+            color: #EDEDE9;
             margin-bottom: 30px;
         }
         
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -649,7 +653,7 @@ def api_create_paste():
     return jsonify({'id': paste_id, 'paste': paste})
 
 if __name__ == '__main__':
-    print("🚀 Starting Modern Paste Service...")
-    print("📍 Access at: http://localhost:5002")
-    print("💡 Features: Syntax highlighting, pagination, search, API endpoints")
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    print("... launching private texts")
+    print("... at http://localhost:5002")
+    print("... With love, from Home Lab")
+    app.run(host='0.0.0.0', port=5005, debug=True)
