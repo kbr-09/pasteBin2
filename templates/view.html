@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ title }}</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="header">
+      <h1>HOMElab TEXTshare</h1>
+    </div>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="title">Viewing paste: {{ paste_id }}</div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-secondary" href="{{ url_for('index') }}">Home</a>
+
+        <a class="btn btn-secondary"
+           href="{{ url_for('raw_paste', paste_id=paste_id) }}">
+          Raw
+        </a>
+
+        <a class="btn btn-danger"
+           href="{{ url_for('delete_paste', paste_id=paste_id) }}"
+           onclick="return confirm('Delete this paste?')">
+          Delete
+        </a>
+      </div>
+    </div>
+
+    <div class="content content-view-page" id="paste-content">
+{{ paste_content }}
+      <button class="copy-btn" onclick="copyPaste(this)">
+  <img src="{{ url_for('static', filename='resources/copy.svg') }}"
+       alt="Copy"
+       class="copy-icon">
+</button>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('scripts', filename='app.js') }}"></script>
+</body>
+</html>

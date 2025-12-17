@@ -1,2 +1,4 @@
-
-!pasteBin2.py
+.venv
+.idea
+./pastes
+__pycache__/

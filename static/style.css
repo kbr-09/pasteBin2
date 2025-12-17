@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code Retina",-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #2A2A2A;
+  background: #6a6a6a;
+  min-height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    /*font-weight: 800;*/
+    color: #2A2A2A;
+}
+/* ===== layout ===== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== header ===== */
+
+.header {
+  text-align: center;
+  color: #2A2A2A;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+/* ===== alerts ===== */
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.alert-success {
+  background: #DEEBDD;
+  border: 1px solid #C5DDC8;
+  color: #1F4D2A;
+}
+
+.alert-error {
+  background: #EADADB;
+  border: 1px solid #D8B9BE;
+  color: #6E1F2A;
+}
+
+/* ===== form ===== */
+
+.paste-form {
+  background: #7a7a7a;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+  margin-bottom: 24px;
+  border: 1px solid #2a4a4a;
+}
+.paste-form h2 {
+  color: #afafaf;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+    color: #afafaf;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #D6D2CA;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #c5c5c5;
+  color: #2A2A2A;
+}
+
+textarea {
+  min-height: 200px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  resize: vertical;
+}
+
+/* ===== buttons ===== */
+
+.btn {
+  background: #5B6EF5;
+  color: #afafaf;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-submit {
+    color: #afafaf;
+}
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  /*font-weight: 700;*/
+}
+.btn:hover {
+  background: #4a5edc;
+}
+
+.btn-secondary {
+  background: #6a6a6a;
+}
+
+.btn-danger {
+  background: #ba6141;
+  color: #dfdfdf;
+}
+.btn-danger:hover {
+  background: #ba4444;
+}
+
+/* ===== paste list ===== */
+
+.paste-item {
+  background: #7a7a7a;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #2a4a4a;
+}
+
+.paste-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  color: #afafaf;
+}
+
+.meta {
+  color: #272626;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ===== paste content ===== */
+
+.content {
+  position: relative;
+  margin-top: 12px;
+  background: #c5c5c5;
+  border: 1px solid #D6D2CA;
+  border-radius: 8px;
+  padding: 14px;
+  padding-top: 44px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  white-space: pre-wrap;
+  max-height: 240px;
+  overflow: auto;
+  color: #2A2A2A;
+}
+
+.content-view-page {
+  max-height: none;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+/* ===== copy button ===== */
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 100px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  background: #a5a5a5;
+  /*border: 1px solid rgba(0, 0, 0, 0.01);*/
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.copy-btn:hover {
+  background: #8a8a8a;
+}
+
+.copy-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* ===== pagination ===== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+  padding: 8px 14px;
+  border: 1px solid #D6D2CA;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #2A2A2A;
+  background: #F3F1EC;
+}
+
+.pagination .current {
+  background: #5B6EF5;
+  color: #fff;
+  border-color: #5B6EF5;
+}
+
+/* ===== view page top bar ===== */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: #2A2A2A;
+  font-weight: 800;
+  font-size: 16px;
+}
