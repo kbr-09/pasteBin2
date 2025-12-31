@@ -214,5 +214,5 @@ def api_create_paste():
 
 if __name__ == "__main__":
     print("... launching private texts")
-    print(f"... at http://localhost:{PORT}")
+    print(f"... at http://192.168.1.106:{PORT}")
     app.run(host="0.0.0.0", port=PORT, debug=True)
